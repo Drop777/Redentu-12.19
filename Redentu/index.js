@@ -20,19 +20,27 @@ textField.addEventListener('keydown', function (event) {
 
 converButton.addEventListener('click', () => {
   const innerNodes = textField.querySelectorAll("*");
-  const filteredInnerNodes = [...innerNodes].filter(item => {
-    if((item.tagName ===  "SPAN" || item.tagName === "FONT") && item.children.length === 0) {
-      return true;
+  console.log(innerNodes)
+  const allChield = [];
+  const filteredInnerNodes = [...innerNodes].forEach(item => {
+    console.log(item.childNodes);
+    for(let i = 0; i < item.childNodes.length; i++) {
+      if(item.childNodes[i].nodeName === "#text") {
+        allChield.push(item.childNodes[i]);
+      }
     }
-    return false;
-  });
+    }
+  );
 
+  const filteredAllChield = allChield.filter(item => item.data.trim() !== "");
+  console.log(filteredAllChield)
   const listOfNodesWithStyle = [];
 
-  for(let i = 0; i < filteredInnerNodes.length; i++) {
-      const style = window.getComputedStyle(filteredInnerNodes[i], null);
+  for(let i = 0; i < filteredAllChield.length; i++) {
+    console.log(filteredAllChield[i])
+      const style = window.getComputedStyle(filteredAllChield[i].parentNode, null);
       const nodeWhitStyle = {
-        text: filteredInnerNodes[i].innerText,
+        text: filteredAllChield[i].textContent,
         color: style.color,
         fontSize: style.fontSize,
         background: style.backgroundColor
