@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Text Editor</title>
+  <script src="https://kit.fontawesome.com/5020adb6f6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div>
+    <label>Font Size: </label>
+    <select class="font-size">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <label>Text Color: </label><input class="text-color" type="color" />
+    <label>Hilite Color: </label><input class="background-text-color" type="color" />
+    <button class="convert-button">Convert to JSON</button>
+  </div>
+  <div contenteditable="true" class="text-field relative-position cursor_normal none_outline"
+     style="color: rgb(255, 255, 255); opacity: 1; border-radius: 6px; transform: rotate(0deg); border: 0px solid rgb(70, 144, 247); padding: 10px; text-align: center; letter-spacing: 0px; font-size: 32px; font-family: Aleo; font-weight: 300; text-decoration: none; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; text-transform: initial; font-style: normal; z-index: 2002; text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 0px; line-height: 1.5em;"
+     spellcheck="false">
+
+    <span style="background-color: rgb(248, 187, 208); padding-left:3px; padding-right: 3px; border-radius: 4px;">
+    <span>Hi My lovely</span>
+    <span class="" style="color: rgb(136, 14, 79); font-size: 54px">little</span>
+  <span class="" style="color: rgb(186, 104, 200); background-color: rgb(248, 187, 0);">Ponny</span>
+  </span>
+</div>
+
+
+<pre class="json-container"></pre>
+<script src="index.js"></script>
+</body>
+
+</html>
